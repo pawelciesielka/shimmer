@@ -9,6 +9,7 @@ import java.math.BigDecimal;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import java.util.Locale;
 import java.util.Optional;
 import java.util.function.Function;
 
@@ -300,6 +301,7 @@ public class JsonNodeMappingSupport {
     public static Optional<LocalDateTime> asOptionalLocalDateTime(JsonNode parentNode, String path,
             DateTimeFormatter formatter) {
 
+        formatter = formatter.withLocale(Locale.ENGLISH);
         Optional<String> string = asOptionalString(parentNode, path);
 
         if (!string.isPresent()) {
