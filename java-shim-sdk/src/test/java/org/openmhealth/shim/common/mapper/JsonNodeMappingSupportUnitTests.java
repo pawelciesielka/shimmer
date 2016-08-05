@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 import java.util.Optional;
 
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -480,7 +481,7 @@ public class JsonNodeMappingSupportUnitTests {
     @Test
     public void asOptionalLocalDateTimeShouldReturnCustomDateTimeWhenPresent() {
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEE, d MMM yyyy HH:mm:ss");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEE, d MMM yyyy HH:mm:ss", Locale.ENGLISH);
 
         Optional<LocalDateTime> value = asOptionalLocalDateTime(testNode, "custom_local_date_time", formatter);
 
