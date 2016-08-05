@@ -1,4 +1,12 @@
 rootProject.name = 'shimmer'
 include 'java-shim-sdk'
 include 'shim-server'
+include ':java-schema-sdk'
 
+println (settingsDir);
+
+File pafDirectory = new File(settingsDir,'/../schemas');
+
+println ("Katalog SCHEMA z którego SHIMMER bierze ścieżki ${pafDirectory}")
+
+project(':java-schema-sdk').projectDir = new File(pafDirectory, 'java-schema-sdk')
