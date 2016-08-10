@@ -34,7 +34,7 @@ import static org.openmhealth.schema.configuration.JacksonConfiguration.newObjec
  */
 @SpringBootApplication
 @EnableConfigurationProperties
-@EnableMongoRepositories("org.openmhealth.shim")
+@EnableMongoRepositories(basePackages = {"org.openmhealth.shim", "org.openmhealth.shimmer"})
 @ComponentScan(basePackages = {"org.openmhealth.shim", "org.openmhealth.shimmer"})
 public class Application extends SpringBootServletInitializer {
 
