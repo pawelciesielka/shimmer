@@ -56,6 +56,12 @@ public class TestController {
         System.out.println(build.toString());
     }
 
+    @RequestMapping(value = "/test/save")
+    public void saveTest() {
+        Profile profile = new Profile("Jan Kowalski");
+        profileRepository.save(profile);
+    }
+
     @RequestMapping(value = "/test/update")
     public void updateTest() {
         List<Profile> profiles = profileRepository.findAll();
